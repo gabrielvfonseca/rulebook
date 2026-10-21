@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../schema/item.schema.json",
+  "name": "typescript-strict-package",
+  "type": "registry:file",
+  "title": "TypeScript Strict Library",
+  "description": "Publishable strict TypeScript package: tsup dual builds, Vitest, Biome, Changesets, no-any discipline, and explicit public API typing.",
+  "registry": {
+    "stack": ["typescript", "tsup", "vitest", "biome", "changesets", "library"],
+    "agents": ["claude", "cursor", "codex", "windsurf", "gemini", "generic"],
+    "grade": "A",
+    "score": null,
+    "note": "Written for library authors — the strict-tsconfig flag set (noUncheckedIndexedAccess, exactOptionalPropertyTypes) and the 'no runtime dep under 50 lines' rule come from real ORM/tooling codebases, not a blog post.",
+    "source": {
+      "kind": "curated",
+      "repo": "gabrielvfonseca/metal",
+      "license": "MIT"
+    },
+    "added": "2026-10-18",
+    "version": "1.0.0"
+  }
+}

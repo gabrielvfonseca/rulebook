@@ -1,0 +1,33 @@
+{
+  "$schema": "../../../schema/item.schema.json",
+  "name": "nextjs16-turborepo",
+  "type": "registry:file",
+  "title": "Next.js 16 + Turborepo",
+  "description": "Next.js 16 App Router monorepo with React 19, Turborepo, pnpm, Tailwind v4, shadcn/ui, strict TS, Biome, and Vitest + Playwright.",
+  "registry": {
+    "stack": [
+      "nextjs",
+      "react",
+      "typescript",
+      "turbo",
+      "tailwind",
+      "pnpm",
+      "biome",
+      "vitest"
+    ],
+    "agents": ["claude", "cursor", "codex", "windsurf", "gemini", "generic"],
+    "grade": "A",
+    "score": null,
+    "note": "Generalized from a production Next.js 16 + Turborepo portfolio that ships with this exact file. Encodes RSC-default discipline, the parent/list composition pattern, and a real Biome + Vitest + Playwright toolchain — not generic React advice.",
+    "source": {
+      "kind": "curated",
+      "repo": "gabrielvfonseca/site",
+      "path": "CLAUDE.md",
+      "commit": "54051d7",
+      "commitDate": "2026-07-10",
+      "license": "MIT"
+    },
+    "added": "2026-10-18",
+    "version": "1.0.0"
+  }
+}

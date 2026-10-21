@@ -1,0 +1,24 @@
+{
+  "$schema": "../../../schema/item.schema.json",
+  "name": "rust-monorepo-ts-crates",
+  "type": "registry:file",
+  "title": "Rust + TypeScript Monorepo",
+  "description": "Polyglot monorepo: Rust crates + TypeScript packages under Turborepo, with buf/protobuf codegen, Biome, clippy::pedantic, and Changesets.",
+  "registry": {
+    "stack": ["rust", "typescript", "turbo", "biome", "protobuf", "bun"],
+    "agents": ["claude", "cursor", "codex", "windsurf", "gemini", "generic"],
+    "grade": "A",
+    "score": null,
+    "note": "Nearly verbatim from a real package-manager monorepo (Rust + TS + proto). Rare in that it covers both toolchains coherently — most configs pick one side and hand-wave the other.",
+    "source": {
+      "kind": "curated",
+      "repo": "gabrielvfonseca/dash",
+      "path": "AGENTS.md",
+      "commit": "5f99261",
+      "commitDate": "2026-07-10",
+      "license": "MIT"
+    },
+    "added": "2026-10-18",
+    "version": "1.0.0"
+  }
+}

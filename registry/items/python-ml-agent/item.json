@@ -1,0 +1,32 @@
+{
+  "$schema": "../../../schema/item.schema.json",
+  "name": "python-ml-agent",
+  "type": "registry:file",
+  "title": "Python ML Pipeline",
+  "description": "Python 3.11+ ML pipeline: collector → features → models → decisions → actions, with scikit-learn/PyTorch, SQLite, autonomy gating, and typed CLI.",
+  "registry": {
+    "stack": [
+      "python",
+      "ml",
+      "scikit-learn",
+      "pytorch",
+      "sqlite",
+      "ruff",
+      "mypy"
+    ],
+    "agents": ["claude", "cursor", "codex", "windsurf", "gemini", "generic"],
+    "grade": "A",
+    "score": null,
+    "note": "Distilled from a self-learning macOS performance agent. The standout idea is the autonomy model (auto/ask/never) for destructive actions — a pattern any ML-driven automation project should steal.",
+    "source": {
+      "kind": "curated",
+      "repo": "gabrielvfonseca/macos-optimizer",
+      "path": "AGENTS.md",
+      "commit": "bb335ca",
+      "commitDate": "2026-03-23",
+      "license": "MIT"
+    },
+    "added": "2026-10-18",
+    "version": "1.0.0"
+  }
+}
