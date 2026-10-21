@@ -5,7 +5,7 @@ import {
   gradeConfig,
   gradeForScore,
   markdownBadge,
-} from "./grade.js";
+} from "../src/grade.js";
 
 const GOOD_CONFIG = `# Project Name
 

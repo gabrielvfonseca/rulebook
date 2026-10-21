@@ -1,17 +1,17 @@
 {
-  "name": "agentrules",
+  "name": "agent-config",
   "version": "0.1.0",
-  "description": "Curated, machine-graded agent configs — install a battle-tested CLAUDE.md/AGENTS.md/.cursorrules into any agent in one command",
+  "description": "Agent Config — curated, machine-graded agent configs. Install a battle-tested CLAUDE.md/AGENTS.md/.cursorrules into any agent in one command",
   "type": "module",
   "license": "MIT",
   "bin": {
-    "agentrules": "dist/cli.js"
+    "agent-config": "dist/cli.js"
   },
   "files": [
     "dist",
     "registry/index.json",
     "schema",
-    "docs/RUBRIC.md",
+    "docs/",
     "README.md"
   ],
   "engines": {

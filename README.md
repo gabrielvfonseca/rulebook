@@ -1,12 +1,12 @@
-# agentrules
+# agent-config
 
 > **Install a battle-tested agent config into any agent, in one command.**
 >
-> `npx agentrules add rust-monorepo-ts-crates --agent cursor` → writes `.cursor/rules/rust-monorepo-ts-crates.mdc`
+> `npx agent-config add rust-monorepo-ts-crates --agent cursor` → writes `.cursor/rules/rust-monorepo-ts-crates.mdc`
 >
 > The same config installs as `CLAUDE.md` / `AGENTS.md` / `.cursorrules` / `.mdc` / `GEMINI.md`. Every curated entry is machine-graded against a [published rubric](docs/RUBRIC.md).
 
-[![npm](https://img.shields.io/npm/v/agentrules)](https://www.npmjs.com/package/agentrules)
+[![npm](https://img.shields.io/npm/v/agent-config)](https://www.npmjs.com/package/agent-config)
 [![license](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
 
 ## Why
@@ -16,25 +16,25 @@ Everyone copy-pastes random `CLAUDE.md` / `.cursorrules` files and nobody knows 
 ## Install
 
 ```bash
-npx agentrules add <name> --agent claude|cursor|codex|windsurf|gemini|all
+npx agent-config add <name> --agent claude|cursor|codex|windsurf|gemini|all
 ```
 
-| Command                      | What it does                                                           |
-| ---------------------------- | ---------------------------------------------------------------------- |
-| `npx agentrules list`        | list every entry                                                       |
-| `npx agentrules search <q>`  | search by name, stack, or description                                  |
-| `npx agentrules view <name>` | preview a config in the terminal                                       |
-| `npx agentrules add <name>`  | install it (`--agent`, `--dry-run`, `--diff`, `--overwrite`, `--link`) |
-| `npx agentrules grade`       | machine-grade your local `CLAUDE.md`/`AGENTS.md` (`--md` for a badge)  |
+| Command                        | What it does                                                           |
+| ------------------------------ | ---------------------------------------------------------------------- |
+| `npx agent-config list`        | list every entry                                                       |
+| `npx agent-config search <q>`  | search by name, stack, or description                                  |
+| `npx agent-config view <name>` | preview a config in the terminal                                       |
+| `npx agent-config add <name>`  | install it (`--agent`, `--dry-run`, `--diff`, `--overwrite`, `--link`) |
+| `npx agent-config grade`       | machine-grade your local `CLAUDE.md`/`AGENTS.md` (`--md` for a badge)  |
 
 ## Curated configs
 
-| Config                                                                               | Description                                                                                                                                       | Stack                             | Agents                                  | Grade                                                               | Install                                        |
-| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------- | --------------------------------------- | ------------------------------------------------------------------- | ---------------------------------------------- |
-| **[Next.js 16 + Turborepo](registry/items/nextjs16-turborepo/content.md)**           | Next.js 16 App Router monorepo with React 19, Turborepo, pnpm, Tailwind v4, shadcn/ui, strict TS, Biome, and Vitest + Playwright.                 | nextjs, react, typescript, turbo  | Claude, Cursor, Codex, Windsurf, Gemini | ![A](https://img.shields.io/badge/agentrules-100%2F100-brightgreen) | `npx agentrules add nextjs16-turborepo`        |
-| **[Python ML Pipeline](registry/items/python-ml-agent/content.md)**                  | Python 3.11+ ML pipeline: collector → features → models → decisions → actions, with scikit-learn/PyTorch, SQLite, autonomy gating, and typed CLI. | python, ml, scikit-learn, pytorch | Claude, Cursor, Codex, Windsurf, Gemini | ![A](https://img.shields.io/badge/agentrules-98%2F100-brightgreen)  | `npx agentrules add python-ml-agent`           |
-| **[Rust + TypeScript Monorepo](registry/items/rust-monorepo-ts-crates/content.md)**  | Polyglot monorepo: Rust crates + TypeScript packages under Turborepo, with buf/protobuf codegen, Biome, clippy::pedantic, and Changesets.         | rust, typescript, turbo, biome    | Claude, Cursor, Codex, Windsurf, Gemini | ![A](https://img.shields.io/badge/agentrules-100%2F100-brightgreen) | `npx agentrules add rust-monorepo-ts-crates`   |
-| **[TypeScript Strict Library](registry/items/typescript-strict-package/content.md)** | Publishable strict TypeScript package: tsup dual builds, Vitest, Biome, Changesets, no-any discipline, and explicit public API typing.            | typescript, tsup, vitest, biome   | Claude, Cursor, Codex, Windsurf, Gemini | ![A](https://img.shields.io/badge/agentrules-100%2F100-brightgreen) | `npx agentrules add typescript-strict-package` |
+| Config                                                                               | Description                                                                                                                                       | Stack                             | Agents                                  | Grade                                                                 | Install                                          |
+| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------- | --------------------------------------- | --------------------------------------------------------------------- | ------------------------------------------------ |
+| **[Next.js 16 + Turborepo](registry/items/nextjs16-turborepo/content.md)**           | Next.js 16 App Router monorepo with React 19, Turborepo, pnpm, Tailwind v4, shadcn/ui, strict TS, Biome, and Vitest + Playwright.                 | nextjs, react, typescript, turbo  | Claude, Cursor, Codex, Windsurf, Gemini | ![A](https://img.shields.io/badge/agent-config-100%2F100-brightgreen) | `npx agent-config add nextjs16-turborepo`        |
+| **[Python ML Pipeline](registry/items/python-ml-agent/content.md)**                  | Python 3.11+ ML pipeline: collector → features → models → decisions → actions, with scikit-learn/PyTorch, SQLite, autonomy gating, and typed CLI. | python, ml, scikit-learn, pytorch | Claude, Cursor, Codex, Windsurf, Gemini | ![A](https://img.shields.io/badge/agent-config-98%2F100-brightgreen)  | `npx agent-config add python-ml-agent`           |
+| **[Rust + TypeScript Monorepo](registry/items/rust-monorepo-ts-crates/content.md)**  | Polyglot monorepo: Rust crates + TypeScript packages under Turborepo, with buf/protobuf codegen, Biome, clippy::pedantic, and Changesets.         | rust, typescript, turbo, biome    | Claude, Cursor, Codex, Windsurf, Gemini | ![A](https://img.shields.io/badge/agent-config-100%2F100-brightgreen) | `npx agent-config add rust-monorepo-ts-crates`   |
+| **[TypeScript Strict Library](registry/items/typescript-strict-package/content.md)** | Publishable strict TypeScript package: tsup dual builds, Vitest, Biome, Changesets, no-any discipline, and explicit public API typing.            | typescript, tsup, vitest, biome   | Claude, Cursor, Codex, Windsurf, Gemini | ![A](https://img.shields.io/badge/agent-config-100%2F100-brightgreen) | `npx agent-config add typescript-strict-package` |
 
 ## By stack
 
@@ -71,7 +71,7 @@ npx agentrules add <name> --agent claude|cursor|codex|windsurf|gemini|all
 
 Every curated entry is scored 0–100 against a [published rubric](docs/RUBRIC.md) —
 brevity, structure, testability, actionable density, freshness, dedupe — using
-the same code as `npx agentrules grade`. The score is machine-checked; the
+the same code as `npx agent-config grade`. The score is machine-checked; the
 editorial one-liner in each `item.json` is the human judgment. Grading is the
 quiet signal — **the product is one-command, cross-agent install.**
 

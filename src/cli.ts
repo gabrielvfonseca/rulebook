@@ -9,14 +9,14 @@ import {
 } from "node:fs";
 import { join, resolve, dirname, relative } from "node:path";
 import { fileURLToPath } from "node:url";
-import { contentHash, gradeConfig, markdownBadge } from "./lib/grade.js";
+import { contentHash, gradeConfig, markdownBadge } from "./grade.js";
 import type {
   RegistryIndex,
   RegistryItem,
   RegistryItemFile,
   AgentTarget,
   FileTarget,
-} from "./lib/types.js";
+} from "./types.js";
 
 const SELF_DIR = dirname(fileURLToPath(import.meta.url));
 const AGENTS: AgentTarget[] = [
