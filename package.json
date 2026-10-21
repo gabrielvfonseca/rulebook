@@ -1,57 +1,59 @@
 {
-  "name": "agent-config",
-  "version": "0.1.0",
-  "description": "Agent Config — curated, machine-graded agent configs. Install a battle-tested CLAUDE.md/AGENTS.md/.cursorrules into any agent in one command",
-  "type": "module",
-  "license": "MIT",
-  "bin": {
-    "agent-config": "dist/cli.js"
-  },
-  "files": [
-    "dist",
-    "registry/index.json",
-    "schema",
-    "docs/",
-    "README.md"
-  ],
-  "engines": {
-    "node": ">=18.17"
-  },
-  "scripts": {
-    "build": "tsc -p tsconfig.build.json",
-    "build:registry": "tsx scripts/build.ts",
-    "typecheck": "tsc --noEmit",
-    "test": "vitest run",
-    "changeset": "changeset",
-    "version": "changeset version",
-    "release": "npm run version && npm publish",
-    "prepare": "husky",
-    "prepublishOnly": "npm run build:registry && npm run test && npm run build"
-  },
-  "lint-staged": {
-    "*.{ts,js,json,md}": "prettier --write"
-  },
-  "keywords": [
-    "ai",
-    "agent",
-    "claude",
-    "cursor",
-    "codex",
-    "agents-md",
-    "claude-md",
-    "cursorrules",
-    "developer-tools"
-  ],
-  "devDependencies": {
-    "@changesets/cli": "^3.0.3",
-    "@types/node": "^22.10.0",
-    "ajv": "^8.20.0",
-    "ajv-formats": "^3.0.1",
-    "husky": "^9.1.0",
-    "lint-staged": "^15.2.0",
-    "prettier": "^3.3.0",
-    "tsx": "^4.19.2",
-    "typescript": "^5.7.2",
-    "vitest": "^2.1.8"
-  }
+    "name": "agent-config",
+    "version": "0.1.0",
+    "description": "Agent Config — curated, machine-graded agent configs. Install a battle-tested CLAUDE.md/AGENTS.md/.cursorrules into any agent in one command",
+    "type": "module",
+    "license": "MIT",
+    "bin": {
+        "agent-config": "dist/cli.js"
+    },
+    "files": [
+        "dist",
+        "registry/index.json",
+        "schema",
+        "docs/",
+        "README.md"
+    ],
+    "engines": {
+        "node": ">=18.17"
+    },
+    "scripts": {
+        "build": "tsc -p tsconfig.build.json",
+        "build:registry": "tsx scripts/build.ts",
+        "typecheck": "tsc --noEmit",
+        "test": "vitest run",
+        "lint": "biome check src tests scripts",
+        "changeset": "changeset",
+        "version": "changeset version",
+        "release": "npm run version && npm publish",
+        "prepare": "husky",
+        "prepublishOnly": "npm run build:registry && npm run test && npm run build"
+    },
+    "lint-staged": {
+        "*.{ts,js,json,md}": "prettier --write"
+    },
+    "keywords": [
+        "ai",
+        "agent",
+        "claude",
+        "cursor",
+        "codex",
+        "agents-md",
+        "claude-md",
+        "cursorrules",
+        "developer-tools"
+    ],
+    "devDependencies": {
+        "@biomejs/biome": "^1.9.4",
+        "@changesets/cli": "^3.0.3",
+        "@types/node": "^22.10.0",
+        "ajv": "^8.20.0",
+        "ajv-formats": "^3.0.1",
+        "husky": "^9.1.0",
+        "lint-staged": "^15.2.0",
+        "prettier": "^3.3.0",
+        "tsx": "^4.19.2",
+        "typescript": "^5.7.2",
+        "vitest": "^2.1.8"
+    }
 }

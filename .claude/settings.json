@@ -1,0 +1,29 @@
+{
+    "hooks": {
+        "PreToolUse": [
+            {
+                "matcher": "Write|Edit|MultiEdit",
+                "commands": ["pnpm exec prettier --write ${{FILE_PATH}}"]
+            }
+        ],
+        "PostToolUse": [
+            {
+                "matcher": "Write|Edit|MultiEdit",
+                "commands": ["pnpm run typecheck"]
+            }
+        ]
+    },
+    "permissions": {
+        "allow": [
+            "pnpm install",
+            "pnpm run typecheck",
+            "pnpm test",
+            "pnpm run build",
+            "pnpm run build:registry",
+            "pnpm changeset",
+            "git add",
+            "git commit",
+            "git push"
+        ]
+    }
+}

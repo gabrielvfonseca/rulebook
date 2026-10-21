@@ -1,36 +1,36 @@
 name: CI
 
 on:
-  push:
-  pull_request:
+    push:
+    pull_request:
 
 jobs:
-  ci:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
+    ci:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v4
 
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v4
-        with:
-          version: 9
+            - name: Setup pnpm
+              uses: pnpm/action-setup@v4
+              with:
+                  version: 9
 
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-          cache: "pnpm"
+            - name: Setup Node
+              uses: actions/setup-node@v4
+              with:
+                  node-version: 20
+                  cache: "pnpm"
 
-      - run: pnpm install --frozen-lockfile
+            - run: pnpm install --frozen-lockfile
 
-      - name: Typecheck
-        run: pnpm run typecheck
+            - name: Typecheck
+              run: pnpm run typecheck
 
-      - name: Tests
-        run: pnpm run test
+            - name: Tests
+              run: pnpm run test
 
-      - name: Build registry
-        run: pnpm run build:registry
+            - name: Build registry
+              run: pnpm run build:registry
 
-      - name: Build CLI
-        run: pnpm run build
+            - name: Build CLI
+              run: pnpm run build

@@ -1,0 +1,40 @@
+{
+    "$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
+    "organizeImports": {
+        "enabled": true
+    },
+    "linter": {
+        "rules": {
+            "recommended": true,
+            "suspicious": {
+                "noExplicitAny": "error"
+            },
+            "complexity": {
+                "noForEach": "off"
+            },
+            "nursery": {
+                "useSortedClasses": "error"
+            }
+        }
+    },
+    "formatter": {
+        "enabled": false
+    },
+    "files": {
+        "include": [
+            "src/**/*.ts",
+            "tests/**/*.ts",
+            "scripts/**/*.ts",
+            "*.{json,md,yml,yaml}"
+        ],
+        "ignore": ["node_modules/", "dist/", ".tmp/", ".husky/_/", ".git/"]
+    },
+    "javascript": {
+        "formatter": {
+            "quoteStyle": "double",
+            "semicolons": "always",
+            "arrowParentheses": "always",
+            "trailingCommas": "all"
+        }
+    }
+}

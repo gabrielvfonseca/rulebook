@@ -1,0 +1,14 @@
+{
+    "typescript": true,
+    "rules": {
+        "no-console": "warn",
+        "prefer-const": "error",
+        "no-unused-vars": "error",
+        "eqeqeq": "error",
+        "curly": "error"
+    },
+    "files": {
+        "include": ["src/**/*.ts", "tests/**/*.ts", "scripts/**/*.ts"],
+        "ignore": ["node_modules/", "dist/"]
+    }
+}
