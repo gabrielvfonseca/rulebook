@@ -2,13 +2,13 @@
 
 ## Reporting a vulnerability
 
-If you discover a security vulnerability in Agent Config, please do not open a
+If you discover a security vulnerability in Rulebook, please do not open a
 public issue. Send details to the repository maintainer through GitHub's private
 vulnerability reporting feature, or contact the maintainer directly.
 
 ## Supported versions
 
-Only the latest release of Agent Config receives security updates.
+Only the latest release of Rulebook receives security updates.
 
 ## Configuration provenance
 

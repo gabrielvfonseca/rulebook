@@ -132,7 +132,7 @@ function loadSourceItems(now: Date): {
 
         const item: RegistryItem = {
             $schema:
-                "https://raw.githubusercontent.com/gabrielvfonseca/agent-config/main/schema/item.schema.json",
+                "https://raw.githubusercontent.com/gabrielvfonseca/rulebook/main/schema/item.schema.json",
             name: meta.name,
             type: "registry:file",
             title: meta.title,
@@ -223,7 +223,7 @@ function gradeBadge(grade: Grade, score: number | null): string {
     if (grade === "ungraded" || score === null) return "—";
     const color =
         grade === "A" ? "brightgreen" : grade === "B" ? "blue" : "yellow";
-    return `![${grade}](https://img.shields.io/badge/agent-config-${score}%2F100-${color})`;
+    return `![${grade}](https://img.shields.io/badge/rulebook-${score}%2F100-${color})`;
 }
 
 function agentBadges(agents: string[]): string {
@@ -255,7 +255,7 @@ function generateReadme(
                 item.registry.agents.filter((a) => a !== "generic"),
             );
             const grade = gradeBadge(item.registry.grade, item.registry.score);
-            const install = `\`npx agent-config add ${item.name}\``;
+            const install = `\`npx rulebook add ${item.name}\``;
             return `| ${name} | ${item.description} | ${stack} | ${agents} | ${grade} | ${install} |`;
         })
         .join("\n");
@@ -285,15 +285,15 @@ function generateReadme(
         })
         .join("\n");
 
-    const readme = `# agent-config
+    const readme = `# rulebook
 
 > **Install a battle-tested agent config into any agent, in one command.**
 >
-> \`npx agent-config add rust-monorepo-ts-crates --agent cursor\` → writes \`.cursor/rules/rust-monorepo-ts-crates.mdc\`
+> \`npx rulebook add rust-monorepo-ts-crates --agent cursor\` → writes \`.cursor/rules/rust-monorepo-ts-crates.mdc\`
 >
 > The same config installs as \`CLAUDE.md\` / \`AGENTS.md\` / \`.cursorrules\` / \`.mdc\` / \`GEMINI.md\`. Every curated entry is machine-graded against a [published rubric](docs/RUBRIC.md).
 
-[![npm](https://img.shields.io/npm/v/agent-config)](https://www.npmjs.com/package/agent-config)
+[![npm](https://img.shields.io/npm/v/rulebook)](https://www.npmjs.com/package/rulebook)
 [![license](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
 
 ## Why
@@ -303,16 +303,16 @@ Everyone copy-pastes random \`CLAUDE.md\` / \`.cursorrules\` files and nobody kn
 ## Install
 
 \`\`\`bash
-npx agent-config add <name> --agent claude|cursor|codex|windsurf|gemini|all
+npx rulebook add <name> --agent claude|cursor|codex|windsurf|gemini|all
 \`\`\`
 
 | Command | What it does |
 |---|---|
-| \`npx agent-config list\` | list every entry |
-| \`npx agent-config search <q>\` | search by name, stack, or description |
-| \`npx agent-config view <name>\` | preview a config in the terminal |
-| \`npx agent-config add <name>\` | install it (\`--agent\`, \`--dry-run\`, \`--diff\`, \`--overwrite\`, \`--link\`) |
-| \`npx agent-config grade\` | machine-grade your local \`CLAUDE.md\`/\`AGENTS.md\` (\`--md\` for a badge) |
+| \`npx rulebook list\` | list every entry |
+| \`npx rulebook search <q>\` | search by name, stack, or description |
+| \`npx rulebook view <name>\` | preview a config in the terminal |
+| \`npx rulebook add <name>\` | install it (\`--agent\`, \`--dry-run\`, \`--diff\`, \`--overwrite\`, \`--link\`) |
+| \`npx rulebook grade\` | machine-grade your local \`CLAUDE.md\`/\`AGENTS.md\` (\`--md\` for a badge) |
 
 ## Curated configs
 
@@ -332,7 +332,7 @@ ${recent}
 
 Every curated entry is scored 0–100 against a [published rubric](docs/RUBRIC.md) —
 brevity, structure, testability, actionable density, freshness, dedupe — using
-the same code as \`npx agent-config grade\`. The score is machine-checked; the
+the same code as \`npx rulebook grade\`. The score is machine-checked; the
 editorial one-liner in each \`item.json\` is the human judgment. Grading is the
 quiet signal — **the product is one-command, cross-agent install.**
 

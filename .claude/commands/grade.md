@@ -1,6 +1,6 @@
 # /grade — Machine-grade a local agent config
 
-Run `pnpm agentrules grade` (or `node dist/cli.js grade`) against the local
+Run `pnpm rulebook grade` (or `node dist/cli.js grade`) against the local
 `CLAUDE.md`/`AGENTS.md`/`.cursorrules`/`.mdc`/`.windsurfrules`/`GEMINI.md`.
 
 Report:

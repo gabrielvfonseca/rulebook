@@ -1,9 +1,9 @@
 # Usage
 
-Agent Config installs a battle-tested agent config into any agent in one command.
+Rulebook installs a battle-tested agent config into any agent in one command.
 
 ```bash
-agent-config <command> [options]
+rulebook <command> [options]
 ```
 
 ## Commands
@@ -13,7 +13,7 @@ agent-config <command> [options]
 List every registry entry with title, grade, stack, agents, and description.
 
 ```bash
-agent-config list
+rulebook list
 ```
 
 ### `search <q>`
@@ -21,8 +21,8 @@ agent-config list
 Search entries by name, stack, or description.
 
 ```bash
-agent-config search nextjs
-agent-config search rust
+rulebook search nextjs
+rulebook search rust
 ```
 
 ### `view <name> [--agent <a>]`
@@ -30,8 +30,8 @@ agent-config search rust
 Preview a config in the terminal. Defaults to the canonical `content.md`.
 
 ```bash
-agent-config view nextjs16-turborepo
-agent-config view rust-monorepo-ts-crates --agent cursor
+rulebook view nextjs16-turborepo
+rulebook view rust-monorepo-ts-crates --agent cursor
 ```
 
 ### `add <name> [--agent <a>]`
@@ -53,9 +53,9 @@ Options:
 Examples:
 
 ```bash
-agent-config add nextjs16-turborepo --agent claude
-agent-config add rust-monorepo-ts-crates --all --cwd ./my-project
-agent-config add typescript-strict-package --agent cursor --overwrite
+rulebook add nextjs16-turborepo --agent claude
+rulebook add rust-monorepo-ts-crates --all --cwd ./my-project
+rulebook add typescript-strict-package --agent cursor --overwrite
 ```
 
 ### `grade [path] [--md]`
@@ -64,9 +64,9 @@ Machine-grade a local `CLAUDE.md`/`AGENTS.md`/`.cursorrules`/`.mdc`/`.windsurfru
 Defaults to auto-detecting a config file in the current working directory.
 
 ```bash
-agent-config grade
-agent-config grade ./CLAUDE.md
-agent-config grade --md
+rulebook grade
+rulebook grade ./CLAUDE.md
+rulebook grade --md
 ```
 
 ## Supported agent targets

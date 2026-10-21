@@ -1,6 +1,6 @@
-# Agent Config — Claude Code tool configuration
+# Rulebook — Claude Code tool configuration
 
-This directory configures Claude Code for the Agent Config project: a curated,
+This directory configures Claude Code for the Rulebook project: a curated,
 machine-graded registry of agent configs (`CLAUDE.md`, `AGENTS.md`,
 `.cursorrules`, `.mdc`, `.windsurfrules`, `GEMINI.md`) plus a CLI to install
 one into any repo.

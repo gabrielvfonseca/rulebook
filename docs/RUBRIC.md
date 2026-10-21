@@ -1,8 +1,8 @@
-# The agentrules rubric
+# The rulebook rubric
 
 Every curated entry in this registry is scored against this rubric. The score is
 **machine-checked only** — see [Machine-checked vs editorial](#machine-checked-vs-editorial).
-The `agentrules grade` CLI command runs the exact same checks on your local config.
+The `rulebook grade` CLI command runs the exact same checks on your local config.
 
 ## Scored dimensions (100 points)
 
@@ -44,8 +44,8 @@ opted in.
 ## Scoring your own config
 
 ```bash
-npx agentrules grade          # scores ./CLAUDE.md or ./AGENTS.md
-npx agentrules grade --md     # emits a markdown badge block for your README
+npx rulebook grade          # scores ./CLAUDE.md or ./AGENTS.md
+npx rulebook grade --md     # emits a markdown badge block for your README
 ```
 
 The CLI uses this same rubric, same code. What you see is what we grade with.

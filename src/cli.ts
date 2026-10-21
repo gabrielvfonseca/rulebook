@@ -195,9 +195,9 @@ function parse(argv: string[]): Parsed {
 
 function help(): void {
     console.log(
-        `agentrules - install a battle-tested agent config into any agent
+        `rulebook - install a battle-tested agent config into any agent
 
-Usage: agentrules <command> [options]
+Usage: rulebook <command> [options]
 
 Commands:
   list                         list every registry entry

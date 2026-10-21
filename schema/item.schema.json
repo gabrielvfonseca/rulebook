@@ -1,124 +1,133 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://raw.githubusercontent.com/gabrielvfonseca/agentrules/main/schema/item.schema.json",
-  "title": "agentrules registry item",
-  "description": "A curated agent config. Compatible with the shadcn registry-item shape (name/type/title/description/files) plus a `registry` extension block for stack, agents, grading, and provenance.",
-  "type": "object",
-  "required": ["name", "type", "title", "description", "files", "registry"],
-  "additionalProperties": false,
-  "properties": {
-    "$schema": { "type": "string" },
-    "name": {
-      "type": "string",
-      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$",
-      "description": "URL-safe slug; also the CLI install name"
-    },
-    "type": {
-      "type": "string",
-      "enum": ["registry:file"],
-      "description": "shadcn registry item type; agent configs are plain files"
-    },
-    "title": { "type": "string", "minLength": 1 },
-    "description": { "type": "string", "minLength": 1 },
-    "files": {
-      "type": "array",
-      "minItems": 1,
-      "items": {
-        "type": "object",
-        "required": ["path", "target", "content"],
-        "additionalProperties": false,
-        "properties": {
-          "path": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://raw.githubusercontent.com/gabrielvfonseca/rulebook/main/schema/item.schema.json",
+    "title": "rulebook registry item",
+    "description": "A curated agent config. Compatible with the shadcn registry-item shape (name/type/title/description/files) plus a `registry` extension block for stack, agents, grading, and provenance.",
+    "type": "object",
+    "required": ["name", "type", "title", "description", "files", "registry"],
+    "additionalProperties": false,
+    "properties": {
+        "$schema": { "type": "string" },
+        "name": {
             "type": "string",
-            "description": "Virtual path within the item (usually the canonical content.md)"
-          },
-          "target": {
+            "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$",
+            "description": "URL-safe slug; also the CLI install name"
+        },
+        "type": {
             "type": "string",
-            "enum": [
-              "AGENTS.md",
-              "CLAUDE.md",
-              "GEMINI.md",
-              ".cursorrules",
-              ".windsurfrules",
-              "CURSOR_MDC"
+            "enum": ["registry:file"],
+            "description": "shadcn registry item type; agent configs are plain files"
+        },
+        "title": { "type": "string", "minLength": 1 },
+        "description": { "type": "string", "minLength": 1 },
+        "files": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+                "type": "object",
+                "required": ["path", "target", "content"],
+                "additionalProperties": false,
+                "properties": {
+                    "path": {
+                        "type": "string",
+                        "description": "Virtual path within the item (usually the canonical content.md)"
+                    },
+                    "target": {
+                        "type": "string",
+                        "enum": [
+                            "AGENTS.md",
+                            "CLAUDE.md",
+                            "GEMINI.md",
+                            ".cursorrules",
+                            ".windsurfrules",
+                            "CURSOR_MDC"
+                        ],
+                        "description": "Which agent file format this file represents. CURSOR_MDC means .cursor/rules/<slug>.mdc"
+                    },
+                    "content": { "type": "string" },
+                    "contentType": { "type": "string", "enum": ["text/plain"] }
+                }
+            }
+        },
+        "registry": {
+            "type": "object",
+            "required": [
+                "stack",
+                "agents",
+                "grade",
+                "score",
+                "source",
+                "added",
+                "version"
             ],
-            "description": "Which agent file format this file represents. CURSOR_MDC means .cursor/rules/<slug>.mdc"
-          },
-          "content": { "type": "string" },
-          "contentType": { "type": "string", "enum": ["text/plain"] }
+            "additionalProperties": false,
+            "properties": {
+                "stack": {
+                    "type": "array",
+                    "minItems": 1,
+                    "items": { "type": "string" },
+                    "description": "Tech-stack tags (nextjs, typescript, rust, python…)"
+                },
+                "agents": {
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {
+                        "type": "string",
+                        "enum": [
+                            "claude",
+                            "cursor",
+                            "codex",
+                            "windsurf",
+                            "gemini",
+                            "generic"
+                        ]
+                    }
+                },
+                "grade": {
+                    "type": "string",
+                    "enum": ["A", "B", "C", "ungraded"],
+                    "description": "Letter grade. Harvested/unpromoted items are `ungraded` — no public failing grades."
+                },
+                "score": {
+                    "type": ["integer", "null"],
+                    "minimum": 0,
+                    "maximum": 100,
+                    "description": "Machine-checked rubric score (see docs/RUBRIC.md). null when ungraded."
+                },
+                "note": {
+                    "type": "string",
+                    "description": "Editorial one-liner: why this config is good. Separate from the machine score."
+                },
+                "source": {
+                    "type": "object",
+                    "required": ["kind"],
+                    "additionalProperties": false,
+                    "properties": {
+                        "kind": {
+                            "type": "string",
+                            "enum": ["curated", "harvested"]
+                        },
+                        "repo": { "type": "string" },
+                        "path": { "type": "string" },
+                        "commit": { "type": "string" },
+                        "commitDate": {
+                            "type": "string",
+                            "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+                            "description": "Pinned source commit date (ISO). Drives the machine-checked freshness dimension."
+                        },
+                        "license": { "type": "string" },
+                        "url": { "type": "string" }
+                    }
+                },
+                "added": {
+                    "type": "string",
+                    "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+                },
+                "version": {
+                    "type": "string",
+                    "pattern": "^\\d+\\.\\d+\\.\\d+$"
+                }
+            }
         }
-      }
-    },
-    "registry": {
-      "type": "object",
-      "required": [
-        "stack",
-        "agents",
-        "grade",
-        "score",
-        "source",
-        "added",
-        "version"
-      ],
-      "additionalProperties": false,
-      "properties": {
-        "stack": {
-          "type": "array",
-          "minItems": 1,
-          "items": { "type": "string" },
-          "description": "Tech-stack tags (nextjs, typescript, rust, python…)"
-        },
-        "agents": {
-          "type": "array",
-          "minItems": 1,
-          "items": {
-            "type": "string",
-            "enum": [
-              "claude",
-              "cursor",
-              "codex",
-              "windsurf",
-              "gemini",
-              "generic"
-            ]
-          }
-        },
-        "grade": {
-          "type": "string",
-          "enum": ["A", "B", "C", "ungraded"],
-          "description": "Letter grade. Harvested/unpromoted items are `ungraded` — no public failing grades."
-        },
-        "score": {
-          "type": ["integer", "null"],
-          "minimum": 0,
-          "maximum": 100,
-          "description": "Machine-checked rubric score (see docs/RUBRIC.md). null when ungraded."
-        },
-        "note": {
-          "type": "string",
-          "description": "Editorial one-liner: why this config is good. Separate from the machine score."
-        },
-        "source": {
-          "type": "object",
-          "required": ["kind"],
-          "additionalProperties": false,
-          "properties": {
-            "kind": { "type": "string", "enum": ["curated", "harvested"] },
-            "repo": { "type": "string" },
-            "path": { "type": "string" },
-            "commit": { "type": "string" },
-            "commitDate": {
-              "type": "string",
-              "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
-              "description": "Pinned source commit date (ISO). Drives the machine-checked freshness dimension."
-            },
-            "license": { "type": "string" },
-            "url": { "type": "string" }
-          }
-        },
-        "added": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
-        "version": { "type": "string", "pattern": "^\\d+\\.\\d+\\.\\d+$" }
-      }
     }
-  }
 }

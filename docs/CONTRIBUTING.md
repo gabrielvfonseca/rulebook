@@ -1,6 +1,6 @@
 # Contributing
 
-Thank you for helping improve Agent Config. This project is a curated, machine-graded
+Thank you for helping improve Rulebook. This project is a curated, machine-graded
 registry of agent configs (`CLAUDE.md`, `AGENTS.md`, `.cursorrules`, `.mdc`,
 `.windsurfrules`, `GEMINI.md`) plus a CLI to install one into any repo.
 

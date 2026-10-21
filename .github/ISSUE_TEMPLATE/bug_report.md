@@ -1,6 +1,6 @@
 ---
 name: Bug report
-about: Create a report to help us improve Agent Config
+about: Create a report to help us improve Rulebook
 title: "[Bug] "
 labels: ["bug"]
 ---
@@ -30,7 +30,7 @@ What actually happened.
 - OS: [e.g. macOS, Ubuntu]
 - Node version: [e.g. v20.0.0]
 - pnpm version: [e.g. 9.15.9]
-- agent-config version: [e.g. 0.1.0]
+- rulebook version: [e.g. 0.1.0]
 
 ## Additional context
 

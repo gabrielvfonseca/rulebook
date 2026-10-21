@@ -1,6 +1,6 @@
 # API
 
-Agent Config exposes a machine-graded registry of agent configuration files.
+Rulebook exposes a machine-graded registry of agent configuration files.
 
 ## Registry item
 
@@ -51,5 +51,5 @@ Grades: A ≥ 85 · B ≥ 70 · C ≥ 50 · below = not published.
 ## CLI programmatic API
 
 The CLI is a Node.js ESM binary at `dist/cli.js`. It is not published as a
-library; use the `agent-config` command or the shadcn-compatible registry
+library; use the `rulebook` command or the shadcn-compatible registry
 endpoints directly.

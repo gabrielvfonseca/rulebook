@@ -143,6 +143,6 @@ describe("markdownBadge", () => {
     it("emits shields link and re-grade hint", () => {
         const md = markdownBadge(gradeConfig(GOOD_CONFIG));
         expect(md).toContain("img.shields.io");
-        expect(md).toContain("npx agentrules grade");
+        expect(md).toContain("npx rulebook grade");
     });
 });

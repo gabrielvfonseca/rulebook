@@ -260,11 +260,11 @@ export function badgeColor(grade: string): string {
 }
 
 export function markdownBadge(result: GradeResult): string {
-    const label = encodeURIComponent(`agentrules ${result.score}`);
+    const label = encodeURIComponent(`rulebook ${result.score}`);
     const color = badgeColor(result.grade);
     return [
-        `[![agentrules](https://img.shields.io/badge/${label}-${result.grade}-${color})](https://github.com/gabrielvfonseca/agentrules)`,
+        `[![rulebook](https://img.shields.io/badge/${label}-${result.grade}-${color})](https://github.com/gabrielvfonseca/rulebook)`,
         "",
-        `<!-- agentrules grade: ${result.score}/100 (machine-checked) · re-grade: npx agentrules grade -->`,
+        `<!-- rulebook grade: ${result.score}/100 (machine-checked) · re-grade: npx rulebook grade -->`,
     ].join("\n");
 }

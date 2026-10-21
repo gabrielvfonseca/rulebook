@@ -8,8 +8,8 @@
 ## Install from source
 
 ```bash
-git clone https://github.com/gabrielvfonseca/agent-config.git
-cd agent-config
+git clone https://github.com/gabrielvfonseca/rulebook.git
+cd rulebook
 pnpm install
 pnpm run build:registry
 pnpm run build
@@ -20,17 +20,17 @@ The compiled CLI is emitted to `dist/cli.js`.
 ## Install the published package
 
 ```bash
-npm install -g agent-config
+npm install -g rulebook
 # or
-pnpm add -g agent-config
+pnpm add -g rulebook
 ```
 
 Then run:
 
 ```bash
-agent-config --help
-agent-config list
-agent-config add nextjs16-turborepo --agent claude
+rulebook --help
+rulebook list
+rulebook add nextjs16-turborepo --agent claude
 ```
 
 ## Verify

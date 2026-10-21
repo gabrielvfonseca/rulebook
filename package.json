@@ -1,11 +1,11 @@
 {
-    "name": "agent-config",
+    "name": "rulebook",
     "version": "0.1.0",
-    "description": "Agent Config — curated, machine-graded agent configs. Install a battle-tested CLAUDE.md/AGENTS.md/.cursorrules into any agent in one command",
+    "description": "Rulebook — curated, machine-graded agent configs. Install a battle-tested CLAUDE.md/AGENTS.md/.cursorrules into any agent in one command",
     "type": "module",
     "license": "MIT",
     "bin": {
-        "agent-config": "dist/cli.js"
+        "rulebook": "dist/cli.js"
     },
     "files": [
         "dist",

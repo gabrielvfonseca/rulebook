@@ -1,6 +1,6 @@
 ---
 name: Feature request
-about: Suggest an idea for Agent Config
+about: Suggest an idea for Rulebook
 title: "[Feature] "
 labels: ["enhancement"]
 ---
